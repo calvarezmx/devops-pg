@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 var express = require('express');
 var router = express.Router();
 
-const connectionString = 'postgres://enpnrefnyunpkw:ee0757121f3d7d98482daf205e5a3f1dab121dd618447a7938032bd29cfc101a@ec2-34-204-127-36.compute-1.amazonaws.com:5432/dm8k818b40fp9';
+const connectionString = 'aquí_la_url_de_su_conexión_a_postgresql';
 
 const pool = new Pool({
     connectionString: connectionString,
