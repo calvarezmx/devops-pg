@@ -33,10 +33,10 @@ router.get('/', (req, res, next) => {
 
 var oauth2 = new jsforce.OAuth2({
     // you can change loginUrl to connect to sandbox or prerelease env.
-    loginUrl : 'https://curious-panda-thload-dev-ed.my.salesforce.com',
-    clientId : '3MVG9p1Q1BCe9GmDii.TFKaZWOXh6JajchQoXkXjEC9x9rov_FN0DpR1.0eRMHlhMo1Qr4QnJkcrTrWRRnHXV',
-    clientSecret : 'C4437B1389C5BA5A513076D4668F373ABF0456319A312680305FDD93A77931F3',
-    redirectUri : 'http://localhost:3000/sfdc/cb'
+    loginUrl : process.env.HOST || 'https://curious-panda-thload-dev-ed.my.salesforce.com',
+    clientId : process.env.CLIENT_ID || '3MVG9p1Q1BCe9GmDii.TFKaZWOXh6JajchQoXkXjEC9x9rov_FN0DpR1.0eRMHlhMo1Qr4QnJkcrTrWRRnHXV',
+    clientSecret : process.env.CLIENT_SECRET || 'C4437B1389C5BA5A513076D4668F373ABF0456319A312680305FDD93A77931F3',
+    redirectUri : process.env.REDIRECT_URI || 'http://localhost:3000/sfdc/cb'
   });
   
   router.get('/oauth2', function(req, res) {
