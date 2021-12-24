@@ -4,4 +4,4 @@
 2. cd devops-pg
 3. npm i
 4. npm run start
-5. Open http://localhost/3000
+5. Open http://localhost:3000
