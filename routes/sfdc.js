@@ -8,7 +8,7 @@ const conn = new jsforce.Connection({
 });
 
 const USERNAME = 'carlosalvarez_86@curious-panda-thload.com';
-const PASSWORD = 'Modelo.2021q1TTteM7GX1O4H0GkZ513kz9';
+const PASSWORD = 'password_token';
 
 
 router.get('/', (req, res, next) => {
@@ -34,8 +34,8 @@ router.get('/', (req, res, next) => {
 var oauth2 = new jsforce.OAuth2({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl : process.env.HOST || 'https://curious-panda-thload-dev-ed.my.salesforce.com',
-    clientId : process.env.CLIENT_ID || '3MVG9p1Q1BCe9GmDii.TFKaZWOXh6JajchQoXkXjEC9x9rov_FN0DpR1.0eRMHlhMo1Qr4QnJkcrTrWRRnHXV',
-    clientSecret : process.env.CLIENT_SECRET || 'C4437B1389C5BA5A513076D4668F373ABF0456319A312680305FDD93A77931F3',
+    clientId : process.env.CLIENT_ID || 'client_id',
+    clientSecret : process.env.CLIENT_SECRET || 'client_secret',
     redirectUri : process.env.REDIRECT_URI || 'http://localhost:3000/sfdc/cb'
   });
   
@@ -57,12 +57,12 @@ var oauth2 = new jsforce.OAuth2({
       console.log("User ID: " + userInfo.id);
       console.log("Org ID: " + userInfo.organizationId);
       // ...
-    //   res.send('success'); // or your desired response
+      res.send('success'); // or your desired response
 
-      var conn = new jsforce.Connection({
-        instanceUrl : 'https://curious-panda-thload-dev-ed.my.salesforce.com',
-        accessToken : 'conn.accessToken'
-      });
+    //   var conn = new jsforce.Connection({
+    //     instanceUrl : 'https://curious-panda-thload-dev-ed.my.salesforce.com',
+    //     accessToken : 'conn.accessToken'
+    //   });
     });
   });
 
